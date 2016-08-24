@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.io.Console;
 
 
-public class day1 {
+public class Day1 {
   public static final String ANSI_RESET = "\u001B[0m";
   public static final String ANSI_BLACK = "\u001B[30m";
   public static final String ANSI_RED = "\u001B[31m";
@@ -30,7 +30,7 @@ public class day1 {
           Thread.sleep(100);
         }
         System.out.println();
-        Thread.sleep(1000);
+        Thread.sleep(100);
       }
       catch(InterruptedException e) { }
     }
