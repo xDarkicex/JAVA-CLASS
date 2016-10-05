@@ -9,30 +9,28 @@ public class Eta{
 public void init() {
   float speed = 0;
   float distance = 0;
-     while (true) {
-      
-      while(true){
-        Writer.say("Enter Distance to Location: ");
-        String input = console.readLine();
-        try { distance=Integer.parseInt(input); break; }
-        catch(NumberFormatException e) { Writer.say("Invalid input"); }
-      }
-      Writer.say("Enter Travel Speed: ");
-        String input = console.readLine();
-        try { speed=Integer.parseInt(input); break; }
-        catch(NumberFormatException e) { Writer.say("Invalid input"); }
-      }
-      eta.estmate(distance, speed);
+  while (true) {
+  
+    while(true){
+      Writer.say("Enter Distance to Location in Miles: ");
+      String input = console.readLine();
+      try { distance=Integer.parseInt(input); break; }
+      catch(NumberFormatException e) { Writer.say("Invalid input"); }
+    }
+    Writer.say("Enter Travel Speed in MP/h: ");
+    String input = console.readLine();
+    try { speed=Integer.parseInt(input); break; }
+    catch(NumberFormatException e) { Writer.say("Invalid input"); }
+  }
+  eta.estmate(distance, speed);
 
 }
 public void estmate(float x, float y){
   float input = (x / y);
   int hours = (int)Math.floor(input);
   int minutes = (int)((input % 1) * 60);
-  int seconds;
-  seconds = (int)(((input % 86400 ) % 3600 ) % 60  );
+  int seconds = (int)((input * 60 * 60) % 60);
   Writer.say(hours+":"+ minutes+":"+seconds);
-
 }
 
   public static void clear_screen() {
